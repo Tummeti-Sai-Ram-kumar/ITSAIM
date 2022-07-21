@@ -1,0 +1,205 @@
+/* Menu-Button */
+
+.menu-bar input[type="checkbox"]{
+    display : none;
+}
+.menu-bar #menu-bar-label:hover{
+    cursor : pointer;
+}
+.menu-bar #menu-bar-label{
+    z-index : 4;
+    position: fixed;
+    top : 10px;
+}
+.menu-bar #menu-bar-label::before{
+    content : "";
+    height : 7px;
+    width : 18px;
+    border-top : 2px solid var(--secondary-color);
+    border-bottom : 1px solid var(--secondary-color);
+    position : absolute;
+    left : 7px;
+    top : 30px;
+    transition : 0.35s all;
+}
+.menu-bar #menu-bar-label::after{
+    content : "";
+    height : 7px;
+    width : 18px;
+    border-top : 1px solid var(--secondary-color);
+    border-bottom : 2px solid var(--secondary-color);
+    position: absolute;
+    top : 38px;
+    left : 7px;
+    transition : 0.35s all;
+}
+#menu-bar-input:checked + #menu-bar-label::before{
+    height : 0px;
+    transform : rotate(45deg) translateX(5px) translateY(5.5px);
+    transition : 0.35s all;
+}    
+#menu-bar-input:checked + #menu-bar-label::after{
+    height : 0px;
+    transform : rotate(-45deg) ;
+    transition : 0.35s all;
+}
+
+/*  Aside-Bar */
+.aside-bar{
+    color : black;
+    width : 220px;
+    width : 14.46%;
+    width : 220px;
+    height : 100%;
+    
+    background :  var(--primary-color);
+    position : fixed;
+    top : 0px;
+    left : -300px;
+    visibility: hidden;
+    transition : left 1.5s;
+    border-radius : 0px 15px 0px 0px; 
+    z-index : 3;
+    box-shadow : 1px 1px 10px grey;
+    /* overflow-y: scroll;  */
+}
+.aside-bar::-webkit-scrollbar{
+    display : none;
+}
+
+#menu-bar-input:checked ~ .aside-bar{
+    visibility: visible;
+    left : 0px;
+}
+
+.aside-bar-logo div p{
+    margin : 0px;
+    padding : 0px;
+    font-family : "Russo One",cursive;
+    cursor : pointer;
+    color : var(--secondary-color);
+    padding-right : 10px;
+}
+.aside-bar-logo div p:first-child{
+    font-size : 18px;
+}
+.aside-bar-logo div p:last-child{
+    font-size : 12px;
+    text-align : center;
+}
+.aside-bar-logo{
+    display : flex;
+    flex-direction : column;
+    align-items : flex-end;
+    justify-content : center;
+    height : 80px;
+}
+.aside-bar-logo div:after{
+    content : "";
+    border-bottom : 2px solid var(--secondary-color);
+    display : block;
+    margin : 3px auto;
+    width : 80px;
+    text-align : center;
+}
+
+.single-tab{
+    display: flex;
+    flex-direction : row;
+    justify-content : flex-start;
+    align-items : center;
+    background : #B8E3FF;
+    background : var(--primary-color);
+    color : var(--secondary-color);
+    width : 100%;
+    cursor : pointer;
+    
+}
+
+.single-tab i{
+    margin-right : 15px;
+    margin-left : 15px;
+}
+
+.single-tab:hover{
+    background : var(--secondary-color);
+    color : var(--primary-color);
+    font-weight : bolder;
+    border-radius : 4px;
+  /*  margin : 10px 10px 10px 10px;  */
+    transition : 0.35s all;
+    margin-left : 10px;
+}
+.collapse i{
+    font-size : 18px;
+}
+
+
+
+.fa-angle-left{
+    background: var(--secondary-color);
+    position : absolute;
+    top : 48%;
+    right : -20px;
+    font-size : 16px;
+    width : 40px;
+    height : 40px;
+    border-radius : 50%;
+    display: flex;
+    justify-content: center;
+    align-items : center;
+    z-index : 6;
+    cursor : pointer;
+    color : var(--primary-color);
+}
+
+.aside-resize{
+    width : 40px;
+}
+.aside-resize-style{
+    width : 25px;
+    height : 25px;
+    border-radius : 25px;
+    font-size : 15px;
+    transform : rotate(180deg);
+    margin-top : 0px;
+    margin-right : 5px;
+}
+.move-to-middle{
+    position: relative;
+    top : 10%;
+    
+}
+
+.all-tabs a{
+    text-decoration: none;
+}
+
+@media screen and (max-width : 912px){
+    .fa-angle-left{
+        display : none;
+    }
+}
+
+@media screen and (max-width : 600px){
+    
+    .single-tab p, .single-tab i{
+        font-size: 13px;
+    }
+    
+    .aside-bar{
+        width : 180px;
+    }
+    .aside-resize{
+        width : 40px;
+    }
+
+    .aside-bar-logo div p:first-child,.nav-bar-logo div p:first-child{
+        font-size : 15px;
+    }
+    .aside-bar-logo div p:last-child,.nav-bar-logo div p:last-child{
+        font-size : 9px;
+    }
+    
+   
+}

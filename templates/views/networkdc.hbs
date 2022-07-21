@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-Rack 8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1.0">
+    <title>IT Store Asset Inventory Management</title>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300&family=Mulish&family=Poppins&family=Russo+One&display=swap" rel="stylesheet">
+   
+    <link rel ="icon" href="https://assets.tridentindia.com/favicon_32x32_1b05f460d9.png">
+    <link rel="stylesheet" href="/css/darkmode.css">
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/networkdc.css">
+    <link rel="stylesheet" href="/css/aside.css">
+    <link rel="stylesheet" href="/css/header.css">
+</head>
+<body>
+    
+{{>onload}}
+
+<!-- Menu Button for Aside Bar -->
+{{>headerNavbar}}
+
+
+<div class="op-wrapper">
+    <div class="search-table-assets">
+    <div class="search-things">
+        <input type="text" id="table-search-bar" placeholder="Search for Assets or locations..." onkeyup="SearchTable()">
+        <!--  <button id="table-search-clear" onclick="ClearTableSearchBar()"><i class="fa-solid fa-xmark"></i></button>   -->
+        <button id="table-search-btn"><i class="fa fa-search"></i></button>
+    </div>
+    <div class="asset-operations">
+        <div class="container" id="excel">
+            <button id="ConvertToExcel" class="ManipTable" onclick="ConvertToExcel()">Export CSV<i class="fa-solid fa-file-arrow-down"></i> </button>
+        </div>
+        <div class="container">
+            <button id="CreateAsset" class="ManipTable" onclick="OpenCreate()">Add Asset <i class="fa-solid fa-plus"></i></button>
+                <div>
+                    <form action="" class="FormBox" id="CreateForm">
+                    <div class="title-div" id="CreateTitle"><p>Add Asset</p></div>
+                    <div class="form-contents">
+                        <label for="">Host Name</label>
+                        <input type="text" name="HostName" id="HostName">
+
+                        <label for="">Serial Number</label>
+                        <input type="text" name="SerialNumber" id="SerialNumber">
+
+                        <label for="">Make Model</label>
+                        <input type="text" name="MakeModel" id="Location">
+
+                        <label for="">Working Status</label>
+                        <input type="text" name="WorkingStatus" id="WorkingStatus">
+
+                        <label for="">Remarks</label>
+                        <input type="text" name="Remarks" id="Remarks">
+
+
+                        <div class="buttons">
+                            <button type="submit">Add</button>
+                            <p onclick="CloseCreate()">Close</p>
+                        </div>
+                        
+                    </div>
+                    <p id="FormContentCreate" class="FormContent"></p>
+                    </form>
+                </div>
+        </div>
+        <div class="container">
+            <button id="UpdateAsset" class="ManipTable" onclick="OpenUpdate()">Update Asset <i class="fa-solid fa-retweet"></i></button>
+                <div>
+                    <form action="" class="FormBox" id="UpdateForm">
+                    <div class="title-div" id="UpdateTitle"><p>Update Asset</p></div>
+                    <div class="form-contents">
+                        <label for="">Host Name</label>
+                        <input type="text" name="HostName" id="HostName">
+
+                        <label for="">Serial Number</label>
+                        <input type="text" name="SerialNumber" id="SerialNumber">
+
+                        <label for="">Update Make Model</label>
+                        <input type="text" name="MakeModel" id="Location">
+
+                        <label for="">Update Working Status</label>
+                        <input type="text" name="WorkingStatus" id="WorkingStatus">
+
+                        <label for="">Update Remarks</label>
+                        <input type="text" name="Remarks" id="Remarks">
+
+
+                        <div class="buttons">
+                            <button type="submit">Update</button>
+                            <p onclick="CloseUpdate()">Close</p>
+                        </div>
+                        
+                    </div>
+                    <p id="FormContentUpdate" class="FormContent"></p>
+                    </form>
+                </div>
+        </div>
+        <div class="container">
+            <button id="DeleteAsset" class="ManipTable" onclick="OpenDelete()">Delete Asset <i class="fa-solid fa-minus"></i></button>
+            <div>
+                <form action="" class="FormBox" id="DeleteForm">
+                    <div class="title-div" id="DeleteTitle"><p>Delete Asset</p></div>
+                    <div class="form-contents">
+                        <label for="">Serial Number</label>
+                        <input type="text" name="SerialNumber" id="SerialNumber">
+
+                        <div class="buttons">
+                            <button type="submit">Delete</button>
+                            <p onclick="CloseDelete()">Close</p>
+                        </div>
+                        
+                    </div>
+                    <p id="FormContentDelete" class="FormContent"></p>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+<div id="table-wrapper">
+<table>
+    <thead>
+        <tr>
+            <th>Index</th>
+            <th>Host Name</th>
+            <th>Serial Number</th>
+            <th>Make Model</th>
+            <th>Working Status</th>
+            <th>Remarks</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each Servers}}
+        <tr class="table-row">
+            <td class="count"></td>
+            <td class="table-cell" id="assetname">{{this.HostName}}</td>
+            <td class="table-cell">{{this.SerialNumber}}</td>
+            <td class="table-cell">{{this.MakeModel}}</td>
+            <td class="table-cell">{{this.WorkingStatus}}</td>
+            <td class="table-cell">{{this.Remarks}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+</div>
+
+<script src="/js/networkdc.js"></script>
+<script src="/js/darkmode.js"></script>
+<script src="/js/aside.js"></script>
+<script src="/js/header.js"></script>
+</body>
+</html>
+

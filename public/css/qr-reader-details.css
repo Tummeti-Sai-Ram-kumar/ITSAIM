@@ -1,0 +1,43 @@
+.QR-Details{
+    width : 80%;
+    margin : 0px auto;
+    display : flex;
+    flex-direction : column;
+    align-items: center;
+    margin-top : 60px;
+}
+
+.QR-Details label{
+    font-family : "Lexend Deca";
+    text-align :left;
+    font-size : 18px;
+    margin-top : 20px;
+    margin-bottom : 5px;
+    font-weight: bold;
+}
+.QR-Details p{
+    margin : 0px;
+    padding : 5px;
+    outline : none;
+    margin-bottom  : 15px;
+    font-family : "Mulish";
+    font-size : 16px;
+    height : 30px;
+    width : 50%;
+    align-items: center;
+    background: grey;
+    color : black;
+}
+
+
+@media screen and (max-width : 600px){
+    .QR-Details{
+        margin-top: 0px;
+    }
+    .QR-Details label:first-child{
+        margin-top : 120px;
+    }
+    .QR-Details p{
+        width : 100%;
+    }
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-Rack 8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1.0">
+    <title>IT Store Asset Inventory Management</title>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300&family=Mulish&family=Poppins&family=Russo+One&display=swap" rel="stylesheet">
+   
+
+
+    <link rel ="icon" href="https://assets.tridentindia.com/favicon_32x32_1b05f460d9.png">
+    <link rel="stylesheet" href="/css/darkmode.css">
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/aside.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/bin.css">
+</head>
+<body>
+    
+{{>onload}}
+
+<!-- Menu Button for Aside Bar -->
+{{>headerNavbar}}
+
+
+
+
+<div class="op-wrapper">
+    <h2>The Bin</h2>
+    <div class="search-table-assets">
+    <div class="search-things">
+        <input type="text" id="table-search-bar" placeholder="Search for Assets or locations..." onkeyup="SearchTable()">
+        <!--  <button id="table-search-clear" onclick="ClearTableSearchBar()"><i class="fa-solid fa-xmark"></i></button>   -->
+        <button id="table-search-btn"><i class="fa fa-search"></i></button>
+    </div>
+    <div class="asset-operations">
+        <div class="container">
+            <button id="ClearDB" class="ManipTable" onclick="ClearDB()">Clr<i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="container">
+            <button id="ConvertToExcel" class="ManipTable" onclick="ConvertToExcel()">Exp<i class="fa-solid fa-file-arrow-down"></i> </button>
+        </div>
+    </div>
+    
+    </div>
+</div>
+
+
+
+<div id="table-wrapper">
+<table>
+    <thead>
+        <tr>
+            <th>Index</th>
+            <th>Equipment Number</th>
+            <th>Description</th>
+            <th>Serial Number</th>
+            <th>Remarks</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each binDetails}}
+        <tr class="table-row">
+            <td class="count"></td>
+            <td class="table-cell">{{this.EquipmentNumber}}</td>
+            <td class="table-cell">{{this.Description}}</td>
+            <td class="table-cell">{{this.SerialNumber}}</td>
+            <td class="table-cell">{{this.Remarks}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+</div>
+
+
+<script src="/js/darkmode.js"></script>
+<script src="/js/aside.js"></script>
+<script src="/js/header.js"></script>
+<script src="/js/bin.js"></script>
+</body>
+</html>
+

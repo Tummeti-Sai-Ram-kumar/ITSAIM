@@ -1,0 +1,96 @@
+/* Nav-Bar */
+.nav-bar{
+    display : grid;
+    grid-template-columns : 0.35fr 1fr 1fr;
+    grid-template-columns : 220px 1fr 1fr;
+    
+    background : rgb(88,199,91);
+    background: #B8E3FF;
+    background : var(--primary-color);
+  margin-left : -7px;
+  margin-top : -8px;
+  margin-right : -9px;
+    top : 0px;
+    right : 0px;
+    left : 0px;
+    z-index : 2;
+    box-shadow : 1px 1px 10px grey;
+}
+.nav-bar .nav-bar-contents ul{
+    display : flex;
+    flex-wrap : wrap;
+    align-items : center;
+    justify-content : space-around;
+    list-style : none;
+    height : 100%;
+    margin : auto 0px;
+}
+.nav-bar .nav-bar-contents ul li a{
+    color : var(--secondary-color);
+    font-size : 18px;
+    font-family : "Lexend Deca",cursive;
+    text-decoration : none;
+}
+.nav-bar-logo div::after {
+    content : "";
+    border-bottom : 2px solid var(--secondary-color);
+    display : block;
+    margin : 3px auto;
+    width : 80px;
+    text-align : center;
+}
+.nav-bar-logo{
+    display : flex;
+    flex-direction : column;
+    align-items : flex-end;
+    justify-content : center;
+    height : 80px;
+}
+.nav-bar-logo div p:first-child{
+    font-size : 18px;
+}
+.nav-bar-logo div p:last-child{
+    font-size : 12px;
+    text-align : center;
+}
+.nav-bar-logo div p{
+    margin : 0px;
+    padding : 0px;
+    padding-right : 10px;
+    font-family : "Russo One",cursive;
+    cursor : pointer;
+    
+}
+
+
+.nav-bar-contents ul li::after{
+    width : 40px;
+    content : "";
+    border-bottom : 1px solid var(--secondary-color);
+    display: block;
+    margin : 0px auto;
+}
+.nav-bar-contents ul li:hover{
+    transform : scale(1.1);
+    font-weight: bolder;
+    transition : 0.35s all;
+    border-radius : 4px;
+    
+} 
+
+
+@media screen and (max-width : 600px){
+    .nav-bar-contents{
+        display : none;
+    }
+
+    .nav-bar{
+        display : flex;
+        flex-direction : row;
+        justify-content : center;
+        align-items : center;
+        position : fixed;
+        top : 0px;
+    }
+
+}

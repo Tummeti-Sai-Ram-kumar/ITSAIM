@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-Rack 8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1.0">
+    <title>IT Store Asset Inventory Management</title>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300&family=Mulish&family=Poppins&family=Russo+One&display=swap" rel="stylesheet">
+   
+
+
+    <link rel ="icon" href="https://assets.tridentindia.com/favicon_32x32_1b05f460d9.png">
+    <link rel="stylesheet" href="/css/darkmode.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/aside.css">
+    <link rel="stylesheet" href="/css/fonts.css">
+
+</head>
+<body>
+    
+ <!-- Menu Button for Aside Bar -->   
+<div class="menu-bar">
+    <input type="checkbox" id="menu-bar-input" name="">
+    <label for="menu-bar-input" id="menu-bar-label"></label>   
+
+    <!-- Aside Bar -->
+    <aside class="aside-bar" id="aside-bar">
+        <div class="aside-bar-logo" id="aside-bar-logo">
+            <div>
+                <p class="aside-bar-title">Trident Group</p>
+                <p class="aside-bar-sub-title">IT - Infra</p>
+            </div>
+        </div>
+
+        <i class="fa-solid fa-angle-left" id="aside-resize-btn"></i>
+        
+        <div class="all-tabs" id="all-tabs">
+            
+            <a href="/home">
+            <div class="single-tab-home single-tab">
+                <i class="fa-solid fa-house"></i>
+                <p class="single-tab-name">Home</p>
+            </div>
+            </a>
+            
+            <a href="/rackview">
+            <div class="single-tab-dashboard single-tab">
+                <i class="fa-solid fa-table"></i>
+                <p class="single-tab-name">Rack View</p>
+            </div>
+            </a>
+            <a href="/tableview">
+            <div class="single-tab-services single-tab">
+                <i class="fa-solid fa-table-columns"></i>
+                <p class="single-tab-name">Table View</p>
+            </div>
+            </a>
+            <a href="/qr">
+            <div class="single-tab-qr single-tab">
+                <i class="fa-solid fa-qrcode"></i>
+                <p class="single-tab-name">QR Arena</p>
+            </div>
+            </a>
+            <a href="/bin">
+            <div class="single-tab-trash single-tab">
+                <i class="fa-solid fa-trash"></i>
+                <p class="single-tab-name">The Bin</p>
+            </div>
+            </a>
+            
+    
+            
+                <div class="dark-mode single-tab" id="dark-mode" onclick="DarkMode()">
+                <i class="fa-solid fa-moon" id="sun-moon"></i>
+                <p id="sun-moon-mode" class="single-tab-name">Dark</p>
+                </div>
+            
+                <div class="collapse single-tab" id="shrink">
+                <i class="fa-solid fa-circle-arrow-left" id="collapse-expand"></i>
+                <p class="single-tab-name">Collapse</p>
+                </div>
+        </div>
+
+   </aside>
+</div>    
+
+<header class="nav-bar">
+
+    <div class="nav-bar-logo">
+        <div>
+            <p class="nav-bar-title">Trident Group</p>
+            <p class="nav-bar-sub-title">IT - Infra</p>
+        </div>
+    </div>
+
+
+    <nav class="nav-bar-contents"> 
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <!-- 
+            <li id="services">
+                <a href="">Services</a>
+                <ul>
+                    <li onclick="AddAsset()"><a href="">Create Asset</a></li>
+                    <li onclick="UpdateAsset()"><a href="">Update Asset</a></li>
+                    <li onclick="DeleteAsset()"><a href="">Delete Asset</a></li>
+                </ul>
+            </li>
+            -->
+            <li><a href="/tableview">Table View</a></li>
+            <li><a href="/rackview">Rack View</a></li>
+        </ul>     
+    </nav>   
+</header>
+
+<script src="/js/darkmode.js"></script>
+<script src="/js/aside.js"></script>
+<script src="/js/header.js"></script>
+
+</body>
+</html>

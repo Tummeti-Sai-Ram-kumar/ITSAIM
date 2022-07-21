@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-Rack 8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1.0">
+    <title>IT Store Asset Inventory Management</title>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300&family=Mulish&family=Poppins&family=Russo+One&display=swap" rel="stylesheet">
+   
+
+
+    <link rel ="icon" href="https://assets.tridentindia.com/favicon_32x32_1b05f460d9.png">
+    <link rel="stylesheet" href="/css/darkmode.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/aside.css">
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/home.css">
+
+    <link rel="stylesheet" href="/css/assettable.css">
+</head>
+<body>
+    
+<!-- Menu Button for Aside Bar -->   
+
+{{>onload}}
+
+{{>headerNavbar}}
+
+
+<div class="search-assets" id="search-assets">
+    <input type="text" id="search-bar" placeholder="Search for Assets..." onkeyup="Search()">
+    <p id="search-clear" onclick="ClearSearchBar()"><i class="fa-solid fa-xmark"></i></p>
+</div>
+
+<div class="main-assets" id="main-assets">
+    <div class="assets">
+        <div id="Desktops" class="asset" name="Desktops">
+            <p id="Desktops">Desktops</p>
+        </div>
+        <div id="Ipads" class="asset">
+            <p id="Ipads">Ipads</p>
+        </div>
+        <div id="HardDisks" class="asset">
+            <p id="HardDisks">HardDisks</p>
+        </div>
+        <div id="Peripherals" class="asset">
+            <p id="Peripherals">Peripherals</p>
+        </div>
+        <div id="IpPhones" class="asset">
+            <p id="IpPhones">Ip Phones</p>
+        </div>
+        <div id="servers" class="asset">
+            <p id="servers">Servers</p>
+        </div>
+        <div id="cctv" class="asset">
+            <p id="cctv">CCTV</p>
+        </div>
+        <div id="LaptopByod" class="asset">
+            <p id="LaptopByod">Laptops (BYOD)</p>
+        </div>
+        <div id="LaptopsTrident" class="asset">
+            <p id="LaptopsTrident">Laptops (TRI)</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="/js/darkmode.js"></script>
+<script src="/js/home.js" onload=""></script>
+<script src="/js/aside.js"></script>
+<script src="/js/header.js"></script>
+</body>
+</html>

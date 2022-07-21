@@ -1,0 +1,214 @@
+body::-webkit-scrollbar {
+    width: 8px;               /* width of the entire scrollbar */
+}
+  
+body::-webkit-scrollbar-track {
+    background: white;        /* color of the tracking area */
+}
+  
+body::-webkit-scrollbar-thumb {
+    background-color: grey;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid white;  /* creates padding around scroll thumb */
+}
+
+.main-assets{
+    display : flex;
+    justify-content: center;
+    margin-top : 60px;
+    margin-bottom : 60px;
+}
+
+.main-assets div{
+    width : 80%;
+    margin : 0px auto;
+    display : grid;
+    grid-template-columns : 1fr 1fr 1fr;
+    grid-gap : 100px;
+    
+}
+.main-assets div div{
+    border : 1px solid;
+    height : 100px;
+    width : 300px;
+    cursor : pointer;
+}
+
+
+.main-assets div div:first-child{
+    background : rgba(77, 202, 115, 0.2);
+    border : 2px solid rgba(77, 202, 115, 1);
+}
+
+.main-assets div div:nth-child(2){
+    background: rgba(255, 99, 132, 0.2);
+    border : 2px solid rgb(193, 52, 80);
+}
+
+.main-assets div div:nth-child(3){
+    background: rgba(255, 206, 86, 0.2);
+    border : 2px solid rgba(255, 206, 86, 1);
+}
+
+.main-assets div div:nth-child(4){
+    background: rgba(255, 99, 132, 0.2);
+    border : 2px solid rgb(193, 52, 80);
+}
+
+.main-assets div div:nth-child(5){
+    background: rgba(255, 206, 86, 0.2);
+    border : 2px solid rgba(255, 206, 86, 1);
+}
+
+.main-assets div div:nth-child(6){
+    background : rgba(77, 202, 115, 0.2);
+    border : 2px solid rgba(77, 202, 115, 1);
+}
+
+.main-assets div div:nth-child(7){
+    background: rgba(255, 206, 86, 0.2);
+    border : 2px solid rgba(255, 206, 86, 1);
+}
+
+.main-assets div div:nth-child(8){
+    background : rgba(77, 202, 115, 0.2);
+    border : 2px solid rgba(77, 202, 115, 1);
+}
+
+.main-assets div div:nth-child(9){
+    background: rgba(255, 99, 132, 0.2);
+    border : 2px solid rgb(193, 52, 80);
+}
+
+
+.main-assets div div:first-child:hover{
+    background : rgba(77, 202, 115, 0.6);
+    transition : 0.35s all;
+}
+
+.main-assets div div:nth-child(2):hover{
+    background: rgba(255, 99, 132, 0.6);
+    transition : 0.35s all;
+}
+
+.main-assets div div:nth-child(3):hover{
+    background: rgba(255, 206, 86, 0.6);
+    transition : 0.35s all;
+}
+
+.main-assets div div:nth-child(4):hover{
+    background: rgba(255, 99, 132, 0.6);
+    transition : 0.35s all;
+}
+
+.main-assets div div:nth-child(5):hover{
+    background: rgba(255, 206, 86, 0.6);
+    transition : 0.35s all;
+}
+
+.main-assets div div:nth-child(6):hover{
+    background : rgba(77, 202, 115, 0.6);
+    transition : 0.35s all;
+}
+
+.main-assets div div:nth-child(7):hover{
+    background: rgba(255, 206, 86, 0.6);
+    transition : 0.35s all;
+}
+
+.main-assets div div:nth-child(8):hover{
+    background : rgba(77, 202, 115, 0.6);
+    transition : 0.35s all;
+}
+
+.main-assets div div:nth-child(9):hover{
+    background: rgba(255, 99, 132, 0.6);
+    transition : 0.35s all;
+}
+
+
+.main-assets div div p{
+    font-family : "Russo One";
+    font-size : 20px;
+    letter-spacing : 2px;
+}
+.main-assets div div{
+    display : flex;
+    flex-direction : row;
+    justify-content : center;
+    align-items : center;
+}
+
+.search-assets{
+    width : 80%;
+    margin : 0px auto;
+    margin-top : 50px;
+    height : 40px;
+    padding : 5px 20px;
+    display: flex;
+    flex-direction : row;
+    justify-content: center;
+    align-items: center;
+}
+.search-assets input{
+    width : 50%;
+    padding : 10px 30px;
+    font-family: "Lexend Deca";
+    font-size : 16px;
+    outline  : none; 
+    border : none;
+    background: var(--primary-color);
+    color : var(--secondary-color);
+    box-shadow: 1px 1px 10px grey;
+    border : 1px solid grey;
+}
+.search-assets #search-clear{
+    position: relative;
+    left : -20px;
+}
+
+
+@media screen and (max-width : 1025px){
+    .main-assets div div {
+        width :200px;
+        height : 80px;
+    }
+    .main-assets div{
+        grid-gap : 60px;
+    }
+    .main-assets div div p{
+        font-size: 18px;
+    }
+    
+}
+@media screen and (max-width : 912px){
+    .main-assets div{
+        grid-template-columns : 1fr 1fr ;
+    }
+    .main-assets div div{
+        width : 200px;
+    }
+    .main-assets div div p{
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width : 600px){
+    .main-assets div{
+        display : flex;
+        flex-direction : column;
+        align-items : center;
+        grid-gap : 10px;
+    }
+    .main-assets div div{
+        width : 95%;
+        margin : 0px auto;
+        height : 100px;
+    }
+    .main-assets div div p{
+        font-size: 15px;
+    }
+    .search-assets{
+        margin-top : 100px;
+    }
+}

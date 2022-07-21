@@ -1,0 +1,411 @@
+/*  Grid View of Assets */
+.Racks{
+    margin-top : 100px;
+    width : 100%;
+    margin : 0px auto;
+    position : relative;
+    margin-bottom : 50px;
+}
+.Racks-container{
+    width : 100%;
+}
+.assets-grid-view{
+    width : 1000px;  
+    width : 70%;
+    margin : 0px auto;
+    background: black;
+    color : white;
+
+    display : grid;
+    grid-template-columns : 1fr 1fr 1fr 1fr;
+    grid-gap : 10px;
+    padding : 10px;
+    border : 1px solid white;
+    border-radius : 0px;
+    overflow-x :hidden;
+}
+.assets-grid-view .rack{
+    display: flex;
+    flex-direction : column;
+    justify-content : space-between;
+    align-items : center;
+    border : 1px solid white;
+
+
+    height : 100px;
+    width : 100%;
+    cursor : pointer;
+}
+.assets-grid-view .rack:hover{
+    background: #B8E3FF;
+    background: #6d6c6c;
+    color : black;
+    font-weight : bold;
+    transition : 0.35s all;
+    border-radius : 20px;
+}
+
+#RackB{
+    display : grid;
+    grid-template-columns :  1fr 1fr 1fr 1fr 1fr;
+}
+.search-assets{
+    display: flex;
+    justify-content : center;
+    margin-bottom : 40px;
+    margin-top : 70px;
+}
+.search-assets input{
+    padding : 10px 20px;
+    width : 40%;
+    font-family : Poppins,cursive;
+    color :  var(--primary-color);
+    font-weight :  bold;
+    background :  var(--secondary-color);
+    border : 2px solid var(--secondary-color);
+    outline : none;
+}
+.search-assets button {
+    border : none;
+    background : #B8E3FF;
+    background: var(--secondary-color);
+    color : var(--primary-color);
+    padding : 10px;
+    cursor  : pointer;
+}
+#racks-search-btn{
+    border-left : 1px solid var(--primary-color);
+}
+#racks-search-clear{
+    font-weight :  bold;
+}
+
+.search-assets button i{
+    font-size : 16px;
+}
+#slide-left{
+    transform : rotate(180deg);
+    top : 50%;
+    left : 5%;
+    position: absolute;
+    z-index : 1;
+}
+#slide-right{
+    top :50%;
+    position: absolute;
+    right : 5%;
+    z-index : 1;
+}
+.fa-arrow-right{
+    font-size : 18px;
+    padding : 20px 10px;
+    border : 1px solid ;
+    text-align: center;
+    background: var(--secondary-color);
+    color : var(--primary-color);
+    cursor : pointer;
+    border-radius : 5px;
+    border-radius : 0px;
+    opacity: 0.4;
+}
+.fa-arrow-right:hover{
+    color : var(--primary-color);
+    transition : 0.35s all;
+    opacity: 1;
+}
+
+
+.slide-dots{
+    margin-top : 15px;
+    display : flex;
+    justify-content : center;
+    height : 20px;
+}
+.slide-dots span{
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  transition: background-color 0.6s ease;
+  margin-bottom : 400px;
+}
+
+.found-rack{
+    background : #B8E3FF;
+    background: #6d6c6c;
+    color : black;
+    font-weight : bold;
+}
+
+#search-info{
+    display: flex;
+    justify-content : center;
+    align-items : center;
+    font-family : Mulish,cursive;
+    font-weight : bold;
+    margin-bottom : 20px;
+}
+
+
+
+
+@media screen and (max-width : 600px){
+    
+    
+    .assets-grid-view{
+        overflow-x : scroll;
+    }
+    .search-assets{
+        margin-top : 100px;
+    }
+    .search-assets input{
+       
+        padding : 5px 10px;
+        width : 50%;
+        font-size: 12px;
+    }
+    
+    #search-info-button{
+        font-size : 12px;
+    }
+    .search-assets button i{
+        font-size : 12px;
+    }
+    #search-info{
+        display: flex;
+        justify-content: space-around;
+        width : 60%;
+        margin : 0px auto;
+    }
+    #search-info-content{
+        font-size : 12px;
+        text-align: justify;
+    }
+ /*   .assets-grid-view{
+        grid-template-columns : 1fr 1fr 1fr;
+    }
+    #RackB{
+        grid-template-columns : 1fr 1fr 1fr 1fr;
+    }
+    */
+
+    
+    .assets-grid-view .rack{
+        width : 100px;
+    }
+    .fa-arrow-right{
+        font-size: 14px;
+    }
+    .assets-grid-view .rack{
+        font-size: 14px;
+    }
+    
+}
+
+@media screen and (max-width : 500px){
+    .assets-grid-view{
+        width : 60%;
+    }
+    .assets-grid-view .rack{
+        width : 100px;
+    }
+    .fa-arrow-right{
+        font-size: 10px;
+    }
+   
+    .assets-grid-view .rack{
+        font-size: 14px;
+    }
+}
+
+#rack-operations{
+    display: flex;
+    justify-content: space-around;
+    width : 50%;
+    margin : 0px auto;
+}
+.btns{
+    font-family : Poppins,cursive;
+    background: none;
+    font-size : 14px;
+    height : 40px;
+    
+    padding-left : 25px;
+    padding-right : 25px;
+    outline : none;
+    border : 0.5px solid grey;
+    color : var(--secondary-color);
+    font-weight : bold;
+    cursor : pointer;
+}
+.btns i{
+    padding-left : 10px;
+}
+
+#CreateAsset{
+    background : rgba(77, 202, 115, 0.2);
+}
+#UpdateAsset{
+    background: rgba(255, 206, 86, 0.2);
+}
+#DeleteAsset{
+    background: rgba(255, 99, 132, 0.2);
+}
+#CreateAsset:hover{
+    background : rgba(77, 202, 115, 0.6);
+    transition : 0.35s all;
+}
+#UpdateAsset:hover{
+    background: rgba(255, 206, 86, 0.6);
+    transition : 0.35s all;
+}
+#DeleteAsset:hover{
+    background: rgba(255, 99, 132, 0.6);
+    transition : 0.35s all;
+}
+@media screen and (max-width : 900px){
+    .btns{
+        height : auto;
+    }
+}
+@media screen and (max-width : 414px){
+    #rack-operations{
+        width : 70%;
+        margin  : 0px auto;
+        flex-direction: column;
+        align-items: center;
+    }
+    .btns{
+        margin-bottom : 20px;
+        height : 40px;
+        width : 200px;
+    }
+}
+
+
+.FormBox{
+    height : 0px;
+    width : 300px;
+    position : fixed;
+    bottom : 0px;
+    right : 0px;
+    background: whitesmoke;
+    z-index: 50;
+}
+.open-box{
+    height : 400px; 
+    box-shadow: 4px 1px 10px grey;
+    transition : 1s all;
+    overflow-y : scroll;
+}
+.open-box::-webkit-scrollbar {
+    width: 8px;               /* width of the entire scrollbar */
+}
+  
+.open-box::-webkit-scrollbar-track {
+    background: white;        /* color of the tracking area */
+}
+  
+.open-box::-webkit-scrollbar-thumb {
+    background-color: black;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid white;  /* creates padding around scroll thumb */
+}
+
+.FormBox .title-div{
+    
+    font-weight: bold;
+    color : black;
+    position : sticky;
+    top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.FormBox #CreateTitle{
+    background :rgba(77, 202, 115, 0.6);
+}
+.FormBox #UpdateTitle{
+    background: rgba(255, 206, 86, 0.6);
+}
+.FormBox #DeleteTitle{
+    background: rgba(255, 99, 132, 0.6);
+}
+
+.FormBox label{
+    margin-top : 200px;
+    font-family : "Lexend Deca";
+    font-size : 16px;
+}
+
+.FormBox .form-contents{
+    display : flex;
+    flex-direction : column;
+    align-items: flex-start;
+    width : 90%;
+    margin : 0px auto;
+}
+
+.FormBox .form-contents label{
+    margin-top : 20px;
+    margin-bottom : 10px;
+    color : black;
+}
+.FormBox .form-contents input{
+    padding : 10px;
+    outline : none;
+    margin-bottom  : 15px;
+    font-family : "Mulish";
+    font-size : 16px;
+}
+.FormBox .form-contents div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width : 100%;
+}
+.FormBox .form-contents div button, .FormBox .form-contents div p{
+    padding : 5px 20px;
+    font-family : Mulish;
+    font-size : 16px;
+    border : none;
+    background: whitesmoke;
+    box-shadow: 1px 1px 10px grey;
+    cursor  :pointer;
+    margin-right : 15px;
+    margin-top : 20px;
+    margin-bottom : 40px;
+    color : black;
+}
+
+.FormBox .form-contents div button:first-child{
+    background: rgba(77, 202, 115, 0.4);
+}
+.FormBox .form-contents div p{
+    background :rgba(255, 99, 132, 0.4);
+}
+
+
+@media screen and (max-width : 400px){
+    .FormBox{
+        left : 0px;
+        right : 0px;
+        bottom : 0px;
+    }
+    .FormBox .form-contents{
+        width : 80%;
+    }
+}
+
+.FormContent {
+    width : 100%;
+    margin-top: 40px;
+    font-size : 14px;
+    font-family : "Lexend Deca";
+    font-weight : bold;
+    text-align: center;
+    color : black;
+}

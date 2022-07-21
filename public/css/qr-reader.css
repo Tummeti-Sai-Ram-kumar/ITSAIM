@@ -1,0 +1,291 @@
+body::-webkit-scrollbar {
+    width: 8px;               /* width of the entire scrollbar */
+}
+  
+body::-webkit-scrollbar-track {
+    background: white;        /* color of the tracking area */
+}
+  
+body::-webkit-scrollbar-thumb {
+    background-color: grey;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid white;  /* creates padding around scroll thumb */
+}
+
+h2{
+    text-align : center;
+    font-family : "Russo One";
+    font-family: "Lexend Deca";
+    font-weight : bold;
+    margin-bottom: 40px;
+}
+h2::after{
+    width : 10%;
+    content : "";
+    border-bottom : 2px solid rgba(255, 99, 132);
+    display: block;
+    margin : 0px auto;
+}
+
+.QR-Box{
+    box-shadow : 1px 1px 10px grey;
+
+
+    width : 500px;
+    height :  auto;
+    
+    margin : 0px auto;
+    margin-bottom: 40px;
+    position: absolute;
+    transform: translate(-50%,-40%);
+    top : 50%;
+    left : 50%;
+
+}
+
+.QR-Box div{
+    width : 90%;
+    margin : 0px auto;
+}
+
+.qr-code{
+    display : flex;
+    flex-direction : row;
+    align-items : center;
+    justify-content : center;
+    height : 0px;
+    opacity: 0;
+    pointer-events :none;
+    transition : height 0.5s ease-in 0s,opacity 0.1s ease-in 0s;
+}
+.Expand-QR{
+    display : flex;
+    height : auto;
+    height : 150px;
+    opacity: 1;
+    pointer-events : all;
+    transition : height 0.5s ease-in 0s,opacity 0.1s ease-in 1s;
+}
+
+#qr-img{
+    width : 100px;
+    height : 100px;
+    margin-top : 30px;
+}
+
+.QR-Box .qr-intro p:first-child {
+    font-family : Poppins;
+    font-size : 18px;
+    font-weight : bold;
+}
+.QR-Box .qr-intro p:nth-child(2){
+    font-family : Poppins;
+    font-size : 16px;
+}
+
+
+
+.QR-Box .sc-up{
+    height : 50px;
+    display: flex;
+    flex-direction : row;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.QR-Box .sc-up button,#gen-info{
+    background : white;
+    outline : none; 
+    padding : 5px 20px;
+    height : 35px;
+    width : 35%;
+    border-radius : 7px;
+    border : none;
+    cursor : pointer;
+    font-family: "Lexend Deca";
+    font-weight: bold;
+    background: rgba(255, 99, 132, 0.2);
+    color : var(--secondary-color);
+}
+#gen-info{
+    background: rgba(255, 99, 132, 0.4);
+}
+#gen-info:hover{
+    background: rgba(255, 99, 132, 0.6);
+    transition: 0.35s all;
+}
+.sub-qr{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#gen-info{
+    width : 60%;
+    margin-top : 20px;
+    margin-bottom : 20px;
+}
+.QR-Box .sc-up-details{
+    display: flex;
+    flex-direction: column;
+    width : 100%;
+}
+
+.QR-Box .sc-up-details input {
+    margin-top : 20px;
+    height : 40px;
+    font-family : "Lexend Deca";
+    background : white;
+    padding : 10px;
+    box-sizing: content-box;
+    outline : none;
+    border : 1px solid ;
+}
+.QR-Box  .cl-cp{
+    height : 50px;
+    width : 100%;
+    display: flex;
+    flex-direction : row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom : 25px;
+}
+
+.QR-Box .cl-cp button{
+    background : rgba(255, 99, 132, 0.2);
+    outline : none; 
+    padding : 5px 20px;
+    height : 35px;
+    width : 25%;
+    border-radius : 7px;
+    border : none;
+    cursor : pointer;
+    font-family: "Lexend Deca";
+    font-weight: bold;
+    margin-top : 20px;
+    color : var(--secondary-color);
+}
+
+.sc-up button i{
+    padding-left : 5px;
+}
+
+.qr-contents{
+    opacity: 0;
+    pointer-events: none;
+    height : 0;
+    transition : height 0.5s ease-in 0s,opacity 0.5s ease-in 0s;
+}
+
+.Expand{
+    opacity : 1;
+    pointer-events : all;
+    height : 150px;
+    transition : height 0.5s ease-in 0s,opacity 0.5s ease-in 0s;
+}
+
+
+.scanner{
+    background : white;
+    position : absolute;
+    top : 50%;
+    left : 50%;
+    transform : translate(-50%,-50%);
+    width : 500px;
+    z-index : 2;
+    opacity : 0;
+    pointer-events : none;
+    height : 0px;
+    transition : height 0.5s ease-in 0s,opacity 0.5s ease-out 0s;
+    box-shadow: 1px 1px 10px grey;
+}
+.Show-Scanner{
+    opacity : 1;
+    pointer-events : all;
+    height : 400px;
+    transition : height 0.5s ease-in 0s,opacity 0.5s ease-in 0s;
+}
+#scanner-preview{
+    width : 300px;
+    height : 200px;
+    margin : 0px auto;
+    position: relative;
+    top : 0%;
+    left : 50%;
+    transform: translate(-50%,10%);
+}
+.cam-btns{
+    display : flex;
+    flex-direction : row;
+    justify-content : space-around;
+}
+.scan-content{
+    font-family : Poppins;
+    font-size : 18px;
+    font-weight : bold;
+    text-align : center;
+}
+.scanner input[type="radio"]{
+    display : none;
+}
+.cam-btns label{
+    width : 25%;
+    height : 30px;
+    background :rgba(255, 99, 132, 0.2);
+    text-align : center;
+    font-family : "Lexend Deca";
+    outline : none; 
+    padding-top : 10px;
+    padding-left : 10px;
+    padding-right : 10px;
+    font-weight : bold;
+    cursor : pointer;
+    border-radius : 7px;
+    border : none;
+    color : black;
+    margin-top : 15px;
+    font-size : 14px;
+}
+.scanner-close{
+    display : flex;
+    flex-direction : row;
+    align-items : center;
+    justify-content : center;
+}
+.scanner-close button{
+    background :rgba(255, 99, 132, 0.2);
+    outline : none;
+    border-radius : 7px;
+    width : 25%;
+    border : none;
+    font-family : "Lexend Deca";
+    font-weight : bold;
+    height : 35px;
+    cursor : pointer;
+    margin-top  : 30px;
+    padding : 5px 20px;
+}
+
+@media screen and (max-width : 900px){
+    h2{
+        margin-top: 80px;
+        margin-bottom: 40px;
+    }
+    .QR-Box{
+        width : 90%;
+    }
+    .QR-Box .sc-up button{
+        width : 45%;
+    }
+    .QR-Box .cl-cp button{
+        width : 40%;
+    }
+
+
+
+    .scanner{
+        width : 90%;
+        position: absolute;
+    }
+    
+}

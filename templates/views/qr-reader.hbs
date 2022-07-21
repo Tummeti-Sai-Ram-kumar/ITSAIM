@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-Rack 8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1.0">
+    <title>IT Store Asset Inventory Management</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300&family=Mulish&family=Poppins&family=Russo+One&display=swap" rel="stylesheet">
+   
+
+
+    <link rel ="icon" href="https://assets.tridentindia.com/favicon_32x32_1b05f460d9.png">
+    <link rel="stylesheet" href="/css/darkmode.css">
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/qr-reader.css">
+    <link rel="stylesheet" href="/css/aside.css">
+    <link rel="stylesheet" href="/css/header.css">
+</head>
+<body>
+    
+{{>onload}}
+
+<!-- Menu Button for Aside Bar -->
+
+{{>headerNavbar}}
+
+
+
+<div>
+    <h2>QR Code Reader</h2>
+    <div class="QR-Box" id="QR-Box">
+        <div class="qr-intro">
+            <p>QR Code Reader</p>
+            <p>Scan or upload a QR Code </p>
+            
+        </div>
+        <div class="sc-up">
+            <input type="file" id="file-input" name="qr-image" hidden>
+            
+            <button id="file-scan" onclick = "expand2()">Scan <i class="fa-solid fa-qrcode"></i> </button>
+
+            <button id="file-up">Upload <i class="fa-solid fa-cloud-arrow-up"></i></button>
+        </div>
+        <div class="qr-code" id="qr-code">
+            <img src="qr1.png" alt="" id="qr-img">
+        </div>
+        <div class="sub-qr">
+            <button id="gen-info" onclick="expand()">Generate the Info</button>   
+        </div>
+        <div class="qr-contents" id="qr-contents">
+            <div class="sc-up-details">
+                <input name="" id="qr-text" disabled value="Hello World"></input>
+            </div>
+            <div class="cl-cp">
+                <button id="cl">Close</button>
+                <button id="info">View Info</button>
+            </div>
+        </div>
+        
+    </div>
+
+
+    <div class="scanner" id="scanner">
+        <video id="scanner-preview"></video>
+        
+        <div class="scanning-options">
+            <p class="scan-content">Scan the QR</p>
+
+            <div class="cam-btns">
+                <label class="btn btn-primary active">
+                    <input type="radio" name="options" value="1" autocomplete="off" checked> Camera 1
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="options" value="2" autocomplete="off"> Camera 2
+                </label>
+            </div>
+            <div class="scanner-close">
+                <button id="cl-qr" onclick="refresh()">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+    
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+<script src="/js/qr-reader.js"></script>
+<script src="/js/darkmode.js"></script>
+<script src="/js/aside.js"></script>
+<script src="/js/header.js"></script>
+</body>
+</html>

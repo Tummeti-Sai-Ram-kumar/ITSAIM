@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300&family=Mulish&family=Poppins&family=Russo+One&display=swap'); 
+
+body{
+    margin : 0px;
+    padding : 0px;
+}
+:root{
+  --primary-color : white;
+  --secondary-color : black;
+  --third-color : #363636;
+  --fourth-color : whitesmoke;
+}
+
+
+body{
+    background : #FEFEFE;
+    background : var(--primary-color);
+    font-family : Poppins,cursive;
+    color : var(--secondary-color);
+    overflow-x : hidden;
+}
+.dark-theme{
+    --primary-color : black;
+    --secondary-color : white;
+    --third-color : whitesmoke;
+    --fourth-color : rgb(27, 27, 27);
+    transition : 0.35s all;
+}

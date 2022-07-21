@@ -1,0 +1,119 @@
+section{
+    position : absolute;
+    width : 100%;
+    height : 100vh;
+    display : flex;
+    top : 0px;
+    overflow-y: hidden;
+}
+
+
+
+section #img-box{
+    width : 50%;
+    height : 100%;
+}
+section #img-box img{
+    width : 100%;
+    height : 100%;
+}
+
+
+section #login-box{
+    width : 50%;
+    height : 100%;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+}
+section #login-box form{
+    display : flex;
+    flex-direction : column;
+    width : 50%;
+    margin : 0px auto;
+}
+
+section #login-box form input{
+    height : 30px;
+    border-radius : 20px;
+    outline : none;
+    border : 1px solid grey;
+    padding : 5px 20px;
+    font-family : poppins;
+    margin-bottom : 20px;
+}
+
+section #login-box form p{
+    font-size : 25px;
+    font-weight : bold;
+    letter-spacing : 1px;
+    font-family : "Lexend Deca";
+}
+section #login-box form p::after{
+    content : "";
+    display: block;
+    width : 70px;
+    text-align: center;
+    margin-top : 5px;
+    border-bottom : 3px solid orange;
+}
+
+#login-box form h5{
+    text-align: center;
+}
+
+section #login-box form label{
+    font-size : 18px;
+    font-family: "Lexend Deca";
+    margin-left : 5px;
+    margin-bottom : 5px;
+}
+
+section #login-box form button {
+    height : 40px;
+    border-radius : 20px;
+    outline : none;
+    border : 1px solid grey;
+    padding : 5px 20px;
+    background : rgb(255, 165, 0,0.3);
+    margin-top: 30px;
+    font-weight : bold;
+    font-family : "Lexend Deca";
+    font-size : 16px;
+    cursor : pointer;
+    border : none;
+}
+section #login-box form button:hover{
+    background : rgb(255, 165, 0,0.5);
+    transition : 0.35s all;
+}
+
+
+@media screen and (max-width : 800px){
+    section #img-box{
+        width : 100%;
+        height : 100%;
+        position: absolute;
+    }
+    section #login-box{
+        display : flex;
+        justify-content: center;
+        align-items: center;
+        z-index : 1;
+        width : 100%;
+        height : auto;
+    }
+    section #login-box form{
+        width : 70%;
+        margin : 0px auto;
+        background: white;
+        opacity : 0.9;
+        padding : 40px;
+    }
+}
+
+
+
+
+
+

@@ -1,0 +1,49 @@
+.loader-animation{
+    margin-top  : 100px;
+    width : 600px;
+    background: black;
+    
+}
+.loader-animation ul{
+    position : absolute;
+    top : 50%;
+    left : 50%;
+    transform :  translate(-50%,-50%);
+    margin : 0px;
+    padding : 0px;
+    display : flex;
+    z-index : 100;
+
+}
+.loader-animation ul li{
+    list-style : none;
+    height : 40px;
+    width : 40px;
+    border-radius : 50%;
+    background : black;
+    animation : animate 1.5s ease-in-out infinite;
+}
+@keyframes animate{
+    0% , 40% ,100%{
+        transform : scale(0.2);
+    }
+    20%{
+        transform : scale(0.9);
+    }
+}
+.loader-animation ul li:first-child {
+    animation-delay: -1.2s;
+    background : rgba(77, 202, 115, 0.4);
+    box-shadow : 0px 0px 50px rgba(77, 202, 115, 0.2);
+}
+.loader-animation ul li:nth-child(2){
+    animation-delay : -1s;
+    background : rgba(255, 99, 132, 0.4);
+    box-shadow : 0px 0px 50px rgba(255, 99, 132, 0.4);
+}
+.loader-animation ul li:last-child{
+    animation-delay: -0.8s;
+    background : rgba(255, 206, 86, 0.4);
+    box-shadow : 0px 0px 50px rgba(255, 206, 86, 0.4);
+}
+
