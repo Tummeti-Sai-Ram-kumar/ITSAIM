@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/loginSchema.js');
 const {Ipads,LaptopByod,Harddisk,CCTV,LaptopTrident,IpPhone,Desktop} = require('../models/AssetSchema.js');
-var QR = require('../models/QrDetails.js');
+const QR = require('../models/QrDetails.js');
 const AssetCountSchema = require('../models/AssetCountSchema.js');
 const Rack = require('../models/RackContents.js');
 var Dlts = require('../models/DeleteSchema.js');
@@ -185,6 +185,15 @@ router.post('/home/:id', async (req,res) => {
             Remarks : req.body.Remarks
         })
     }
+    else if(req.params.id == "IpPhones"){
+        AssetUploadDetails = new IpPhone({
+            Description : req.body.Description,
+            EquipmentNumber : req.body.EquipmentNumber,
+            SerialNumber : req.body.SerialNumber,
+            Location : req.body.EquipmentNumber,
+            Remarks : req.body.Remarks
+        })
+    }
 
     
 
@@ -226,8 +235,11 @@ router.patch('/home/:id', async (req,res) => {
         else if(AssetName == 'LaptopsTrident'){
             var NewAsset = await LaptopTrident.findOne({SerialNumber : SerialNumber});
         }
-        else if(AssetName == 'Harddisks'){
+        else if(AssetName == 'HardDisks'){
             var NewAsset = await Harddisk.findOne({SerialNumber : SerialNumber});
+        }
+        else if(AssetName == 'IpPhones'){
+            var NewAsset = await IpPhone.findOne({SerialNumber : SerialNumber});
         }
 
        //     console.log("bef " + NewAsset);
@@ -274,36 +286,32 @@ router.delete('/home/:id/:serialnumber', async (req,res) => {
             asset = await Ipads.findOne({SerialNumber : SerialNumber});
         }
         else if(AssetName == 'cctv'){
-            var NewAsset = await CCTV.findOne({SerialNumber : SerialNumber});
+            asset = await CCTV.findOne({SerialNumber : SerialNumber});
         }
         else if(AssetName == 'Desktops'){
-            var NewAsset = await Desktop.findOne({SerialNumber : SerialNumber});
+            asset= await Desktop.findOne({SerialNumber : SerialNumber});
         }
         else if(AssetName == 'LaptopsByod'){
-            var NewAsset = await LaptopByod.findOne({SerialNumber : SerialNumber});
+            asset = await LaptopByod.findOne({SerialNumber : SerialNumber});
         }
         else if(AssetName == 'LaptopsTrident'){
-            var NewAsset = await LaptopTrident.findOne({SerialNumber : SerialNumber});
+            asset = await LaptopTrident.findOne({SerialNumber : SerialNumber});
         }
-        else if(AssetName == 'Harddisks'){
-            var NewAsset = await Harddisk.findOne({SerialNumber : SerialNumber});
+        else if(AssetName == 'HardDisks'){
+            asset = await Harddisk.findOne({SerialNumber : SerialNumber});
         }
-          //  asset.remove();
+        else if(AssetName == 'IpPhones'){
+            asset = await IpPhone.findOne({SerialNumber : SerialNumber});
+        }
             console.log(asset);
             console.log(asset.length)
-        //    res.send(asset);
 
-            if(asset.length === 0){
+            if(!asset){
                 res.status(401).json({status : 401});
             }
             else{
-          //      
-             //   await res.asset.remove();
-           //  Ipads.findOneAndDelete({ManufactSerialNumber : SerialNumber});
-              //  Ipads.deleteOne(asset);
-                asset = await Ipads.find({SerialNumber : SerialNumber});
-           //     console.log(asset[0]);
-                const obj = asset[0];
+
+                const obj = asset;
                 console.log(obj);
                 var dltasset = new Dlts({
                     Description : obj.Description,
@@ -320,14 +328,70 @@ router.delete('/home/:id/:serialnumber', async (req,res) => {
                 });
 
 
-                Ipads.deleteOne({SerialNumber : SerialNumber}).then(function(){
-                    console.log("Data deleted"); // Success
-                    res.status(200).json({status : 200});
-                }).catch(function(error){
-                    console.log(error); // Failure
-                });
-                console.log("Deleted");
-                
+                if(AssetName == 'Ipads'){
+                    Ipads.deleteOne({SerialNumber : SerialNumber}).then(function(){
+                        console.log("Data deleted"); // Success
+                        res.status(200).json({status : 200});
+                    }).catch(function(error){
+                        console.log(error); // Failure
+                    });
+                    console.log("Deleted");
+                }
+                else if(AssetName == 'cctv'){
+                    CCTV.deleteOne({SerialNumber : SerialNumber}).then(function(){
+                        console.log("Data deleted"); // Success
+                        res.status(200).json({status : 200});
+                    }).catch(function(error){
+                        console.log(error); // Failure
+                    });
+                    console.log("Deleted");
+                }
+                else if(AssetName == 'Desktops'){
+                    Desktop.deleteOne({SerialNumber : SerialNumber}).then(function(){
+                        console.log("Data deleted"); // Success
+                        res.status(200).json({status : 200});
+                    }).catch(function(error){
+                        console.log(error); // Failure
+                    });
+                    console.log("Deleted");
+                }
+                else if(AssetName == 'LaptopsByod'){
+                    LaptopByod.deleteOne({SerialNumber : SerialNumber}).then(function(){
+                        console.log("Data deleted"); // Success
+                        res.status(200).json({status : 200});
+                    }).catch(function(error){
+                        console.log(error); // Failure
+                    });
+                    console.log("Deleted");
+                }
+                else if(AssetName == 'LaptopsTrident'){
+                    LaptopTrident.deleteOne({SerialNumber : SerialNumber}).then(function(){
+                        console.log("Data deleted"); // Success
+                        res.status(200).json({status : 200});
+                    }).catch(function(error){
+                        console.log(error); // Failure
+                    });
+                    console.log("Deleted");
+                }
+                else if(AssetName == 'HardDisks'){
+                    Harddisk.deleteOne({SerialNumber : SerialNumber}).then(function(){
+                        console.log("Data deleted"); // Success
+                        res.status(200).json({status : 200});
+                    }).catch(function(error){
+                        console.log(error); // Failure
+                    });
+                    console.log("Deleted");
+                }
+                else if(AssetName == 'IpPhones'){
+                    IpPhone.deleteOne({SerialNumber : SerialNumber}).then(function(){
+                        console.log("Data deleted"); // Success
+                        res.status(200).json({status : 200});
+                    }).catch(function(error){
+                        console.log(error); // Failure
+                    });
+                    console.log("Deleted");
+                }
+
             }
         
     }
@@ -757,6 +821,105 @@ router.get('/servers',async (req,res) => {
     res.redirect("/");
 })
 
+router.post('/servers',async(req,res) => {
+
+    const ServerUploadDetails = new QR({
+        HostName : req.body.HostName,
+        SerialNumber : req.body.SerialNumber,
+        MakeModel : req.body.MakeModel,
+        WorkingStatus : req.body.WorkingStatus,
+        Remarks : req.body.Remarks
+    })
+
+    try{
+        console.log(ServerUploadDetails);
+        await ServerUploadDetails.save().then(function(){
+            console.log("Data Saved"); // Success
+            res.send({status : 201});
+        }).catch(function(error){
+            console.log(error); // Failure
+        }); 
+    }
+    catch(err){
+        res.send({status : 400});
+    }
+
+})
+
+router.patch('/servers',async(req,res) => {
+    var SerialNumber = req.body.SerialNumber;
+    try{
+        var NewAsset = await QR.findOne({SerialNumber : SerialNumber});
+        if(!NewAsset){
+            res.send({status : 400});
+        }
+        else{
+            if(req.body.HostName != ''){
+                NewAsset.HostName = req.body.HostName
+            }
+            if(req.body.MakeModel != ''){
+                NewAsset.MakeModel = req.body.MakeModel
+            }
+            if(req.body.Remarks != ''){
+                NewAsset.Remarks = req.body.Remarks
+            }
+            if(req.body.WorkingStatus != ''){
+                NewAsset.WorkingStatus = req.body.WorkingStatus
+            }
+            
+        }
+        NewAsset.save().then(function(){
+            console.log("Data Saved and updated"); // Success
+        }).catch(function(error){
+            console.log(error); // Failure
+        });
+        res.send({status : 201});
+    }
+    catch(err){
+        res.send({status : 500});
+    }
+})
+
+router.delete('/servers/:id',async(req,res) => {
+    var SerialNumber = req.params.id;
+    console.log(SerialNumber);
+    try{
+        var asset = await QR.findOne({SerialNumber : SerialNumber});
+        if(!asset){
+            res.status(401).json({status : 401});
+        }
+        else{
+
+            const obj = asset;
+            console.log(obj);
+            var dltasset = new Dlts({
+                Description : obj.Description,
+                EquipmentNumber : obj.EquipmentNumber,
+                SerialNumber : obj.SerialNumber,
+                Location : obj.Location,
+                Remarks : obj.Remarks
+            });
+            console.log(dltasset);
+            await dltasset.save().then(function(){
+                console.log("Data Saved"); // Success
+            }).catch(function(error){
+                console.log(error); // Failure
+            });
+
+            QR.deleteOne({SerialNumber : SerialNumber}).then(function(){
+                console.log("Data deleted"); // Success
+                res.status(200).json({status : 200});
+            }).catch(function(error){
+                console.log(error); // Failure
+            });
+            console.log("Deleted");
+
+        }
+    }
+    catch(err){
+        res.status(500).json({status : 500});
+    }
+})
 
 
 module.exports = router;

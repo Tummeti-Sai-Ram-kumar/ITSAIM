@@ -50,10 +50,10 @@
                     <div class="title-div" id="CreateTitle"><p>Add Asset</p></div>
                     <div class="form-contents">
                         <label for="">Host Name</label>
-                        <input type="text" name="HostName" id="HostName">
+                        <input type="text" name="HostName" id="HostName" required>
 
                         <label for="">Serial Number</label>
-                        <input type="text" name="SerialNumber" id="SerialNumber">
+                        <input type="text" name="SerialNumber" id="SerialNumber" required>
 
                         <label for="">Make Model</label>
                         <input type="text" name="MakeModel" id="Location">
@@ -81,11 +81,12 @@
                     <form action="" class="FormBox" id="UpdateForm">
                     <div class="title-div" id="UpdateTitle"><p>Update Asset</p></div>
                     <div class="form-contents">
-                        <label for="">Host Name</label>
-                        <input type="text" name="HostName" id="HostName">
 
                         <label for="">Serial Number</label>
-                        <input type="text" name="SerialNumber" id="SerialNumber">
+                        <input type="text" name="SerialNumber" id="SerialNumber" required>
+
+                        <label for="">Host Name</label>
+                        <input type="text" name="HostName" id="HostName">
 
                         <label for="">Update Make Model</label>
                         <input type="text" name="MakeModel" id="Location">
@@ -114,7 +115,7 @@
                     <div class="title-div" id="DeleteTitle"><p>Delete Asset</p></div>
                     <div class="form-contents">
                         <label for="">Serial Number</label>
-                        <input type="text" name="SerialNumber" id="SerialNumber">
+                        <input type="text" name="SerialNumber" id="SerialNumber" required>
 
                         <div class="buttons">
                             <button type="submit">Delete</button>
